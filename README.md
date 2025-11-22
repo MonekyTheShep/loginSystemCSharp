@@ -94,13 +94,13 @@ writeFile - deletes the file and writes the input you want
 
 
 
-Classes I won’t include due to incompletion:
+## Classes I won’t include due to incompletion:
 ```
 JsonParser
 
 Menu
 ```
-Classes i took from other sources: 
+## Classes i took from other sources: 
 ```
 Hasher
 ```
