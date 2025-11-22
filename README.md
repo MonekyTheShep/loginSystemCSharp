@@ -10,7 +10,7 @@ Basic FileManager and JsonParser
 
 
 
-Classes I wrote:
+# Classes I wrote:
 
 
 
@@ -23,24 +23,24 @@ Constructor: ```new(List<UserCredentials> users)```
 
 ### Parameters:
 
-users: the database you want to look through
+```users```: the database you want to look through
 
 
 
 ### Variables:
 
 
-bool loggedIn: stores the if loginAttempt was successful
+```bool loggedIn```: stores the if loginAttempt was successful
 
-string currentUser: stores the current logged in user
+```string currentUser```: stores the current logged in user
 
 ### Functions:
 
 
 
-loginAttempt - check if the username and password are correct
+```loginAttempt``` - check if the username and password are correct
 
-registerAttempt - check if the user doesn’t exist, if it doesn’t exist create it in the user list
+```registerAttempt``` - check if the user doesn’t exist, if it doesn’t exist create it in the user list
 
  
 
@@ -60,11 +60,11 @@ Constructor: ```new(string file, string path, dynamic ?data = null)```
 
 ### Parameters:
 
-file: the file you want to write or read to
+```file```: the file you want to write or read to
 
-path: the path you want to write or read to
+```path```: the path you want to write or read to
 
-data: default of null, the data you want to write
+```data```: default of null, the data you want to write
 
 
 
@@ -72,11 +72,11 @@ data: default of null, the data you want to write
 
 
 
-string file: file name
+```string file```: file name
 
-string path: path location
+```string path```: path location
 
-dynamic data: any type of data you want to write
+```dynamic data```: any type of data you want to write
 
 
 ### Functions:
@@ -94,13 +94,13 @@ writeFile - deletes the file and writes the input you want
 
 
 
-## Classes I won’t include due to incompletion:
+# Classes I won’t include due to incompletion:
 ```
 JsonParser
 
 Menu
 ```
-## Classes i took from other sources: 
+# Classes i took from other sources: 
 ```
 Hasher
 ```
