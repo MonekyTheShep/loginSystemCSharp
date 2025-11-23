@@ -23,7 +23,7 @@ Find a way to make it so i can translate any dataset type inside of the List<Use
 
 ## HandleAuthenticator
 
-HandleAuthenticator takes user datasets as a List through the UserCredentials Object. This should allow me to convert any dataset into the list allowing for multiple ways to authenticate. <br>
+HandleAuthenticator takes user datasets as a List through the UserCredentials Object. This should allow me to convert any dataset into the list allowing for multiple ways to authenticate. <br><br>
 Constructor: ```new(List<UserCredentials> users)```
 
 
