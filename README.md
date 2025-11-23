@@ -8,6 +8,7 @@ Basic FileManager and JsonParser
 # TODO:
 ```
 Input Sanitastion
+File integrity
 Menu
 Make a abstract class for database handling
 Find a way to make it so i can translate any dataset type inside of the List<UserCredentials>
