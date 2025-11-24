@@ -33,7 +33,14 @@ HandleAuthentication session = new HandleAuthentication(__users);
 // test data
 HandleAuthentication session = new HandleAuthentication(__users);
 Console.Write(session.registerAttempt("user", "password") + "\n"); // True 
-Console.Write(session.loginAttempt("user", "password") + "\n"); // True 
+Console.Write(session.loginAttempt("user", "password") + "\n"); // True
+
+        
+// write data back to json file
+JsonParser __jsonParser = new JsonParser(session.users);
+fileManager.data = __jsonParser.serializeJson();
+
+fileManager.writeFile();
 
 ```
 
