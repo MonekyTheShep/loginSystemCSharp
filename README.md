@@ -1,5 +1,5 @@
 # loginSystemCSharp
-A login system using JSON files to store user dat.
+A login system using JSON files to store user data.
 Has the Argon2 hashing algorithm for password hashing.
 
 Basic FileManager and JsonParser
