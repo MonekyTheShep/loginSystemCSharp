@@ -16,6 +16,20 @@ Change List<UserCredentials> which has a Big O of o(n) to a dictionary with o(1)
 ```
 
 
+# Example usage
+
+```
+// initialise the file manager and read the existing data from json file
+var fileManager = new FileManager("data.json", Directory.GetCurrentDirectory());
+List<UserCredentials> __users = JsonConvert.DeserializeObject<List<UserCredentials>>(fileManager.readFile());
+        
+// test data
+HandleAuthentication session = new HandleAuthentication(__users);
+Console.Write(session.registerAttempt("user", "password") + "\n"); // True 
+Console.Write(session.loginAttempt("user", "password") + "\n"); // True 
+
+
+```
 
 # Classes I wrote:
 
@@ -114,3 +128,4 @@ Menu
 ```
 Hasher
 ```
+
