@@ -20,8 +20,15 @@ Change List<UserCredentials> which has a Big O of o(n) to a dictionary with o(1)
 
 ```
 // initialise the file manager and read the existing data from json file
-var fileManager = new FileManager("data.json", Directory.GetCurrentDirectory());
-List<UserCredentials> __users = JsonConvert.DeserializeObject<List<UserCredentials>>(fileManager.readFile());
+FileManager fileManager = new FileManager("data.json", Directory.GetCurrentDirectory());
+var jsonData = JsonConvert.DeserializeObject<List<UserCredentials>>(fileManager.readFile());
+List<UserCredentials> __users = new List<UserCredentials>{};
+if (jsonData != null)
+{
+    __users = jsonData;
+} 
+        
+HandleAuthentication session = new HandleAuthentication(__users);
         
 // test data
 HandleAuthentication session = new HandleAuthentication(__users);
