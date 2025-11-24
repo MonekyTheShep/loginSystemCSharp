@@ -62,6 +62,8 @@ Constructor: ```new(List<UserCredentials> users)```
 
 ```bool registerAttempt``` - check if the user doesn’t exist, if it doesn’t exist create it in the user list. returns true for success
 
+```void logout``` - clears currentUser and loggedIn variables
+
  
 
 
