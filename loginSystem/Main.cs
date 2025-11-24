@@ -29,17 +29,24 @@ class Program
         database.connect();
 
         // test reading of json from file to list and writing
-        var fileManager = new FileManager("data.json", Directory.GetCurrentDirectory());
+        FileManager fileManager = new FileManager("data.json", Directory.GetCurrentDirectory());
+        var jsonData = JsonConvert.DeserializeObject<List<UserCredentials>>(fileManager.readFile());
+        List<UserCredentials> __users = new List<UserCredentials>{};
+        if (jsonData != null)
+        {
+            __users = jsonData;
+        } 
         
-        List<UserCredentials> __users = JsonConvert.DeserializeObject<List<UserCredentials>>(fileManager.readFile());
+        HandleAuthentication session = new HandleAuthentication(__users);
+        
+        
         
         // test data and shit
-        HandleAuthentication session = new HandleAuthentication(__users);
+        
         Console.Write(session.registerAttempt("user67", "password") + "\n");
         Console.Write(session.registerAttempt("user56", "password") + "\n");
         Console.Write(session.registerAttempt("user13", "password") + "\n");
         Console.Write(session.registerAttempt("user61", "password") + "\n");
-        Console.Write(session.registerAttempt("user2127", "password") + "\n");
         // test login 
         Console.Write($"login attempt: {session.loginAttempt("user67", "password")}\nLogged in: {session.loggedIn}\nCurrent User: {session.currentUser} \n");
 

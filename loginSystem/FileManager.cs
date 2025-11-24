@@ -42,7 +42,7 @@ namespace loginSystem
           }
           catch (Exception e)
           {
-            Console.WriteLine(Convert.ToString(e), "An error occured writing the file");
+            Console.WriteLine(e.ToString(), "An error occured writing the file");
             throw;  
           }
 
@@ -55,19 +55,22 @@ namespace loginSystem
       if (File.Exists(fullPath)){
         try
         {
-           return File.ReadAllText(fullPath);         
+          var fileData = File.ReadAllText(fullPath); 
+          if (fileData != null)
+          {
+            return fileData;  
+          }
+                  
         }
         catch (Exception e)
         {
-          Console.WriteLine(Convert.ToString(e), "An error occured reading the file");
+          Console.WriteLine(e.ToString(), "An error occured reading the file");
           throw;            
         }
         
       } 
-      else
-      {
-        return ""; 
-      }
+      return ""; 
+      
         
     }
 

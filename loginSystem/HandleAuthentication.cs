@@ -9,7 +9,7 @@ namespace loginSystem
 
       public List<UserCredentials> users = new List<UserCredentials>{};
       public bool loggedIn = false;
-      public string currentUser;
+      public string ?currentUser;
       PasswordHasher passwordHasher = new PasswordHasher();
 
       /// <summary>login to a user through the class.</summary>
@@ -46,11 +46,11 @@ namespace loginSystem
       public bool loginAttempt(string _user, string _password)
       {
         
-        string foundPassword = null;
+        string foundPassword = "";
         foreach (var user in users)
           {
             
-            if (user.Username == _user)
+            if (user.Username == _user && user.Password != null)
               {
                 foundPassword = user.Password;
                 break;
@@ -58,7 +58,7 @@ namespace loginSystem
               
           } 
 
-          if (foundPassword != null)
+          if (foundPassword != "")
           {
                 var verifyHash = passwordHasher.VerifyPassword(_password, foundPassword);
                 if (verifyHash)
