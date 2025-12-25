@@ -30,8 +30,6 @@ if (jsonData != null)
     __users = jsonData;
 } 
         
-HandleAuthentication session = new HandleAuthentication(__users);
-        
 // test data
 HandleAuthentication session = new HandleAuthentication(__users);
 Console.Write(session.registerAttempt("user", "password") + "\n"); // True 
